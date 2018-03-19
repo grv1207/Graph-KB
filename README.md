@@ -46,7 +46,7 @@ To check the status whether neo4j is running
 * Stop the neo4j instance before performing below steps (systemctl stop neo4j)
 * cp  com.dfki.LT.OntologyExplorer-1.0-SNAPSHOT.jar /var/lib/neo4j/plugins/
 
-## Create database for Neo4j (If you don't have graph.DB file)
+### Create database for Neo4j (If you don't have graph.DB file)
 * Here we used noe4j's bulk import utility:
 * In order to create DB for NEO4j we need 4 files(2 header files and 2 content files)
 
@@ -60,7 +60,7 @@ To check the status whether neo4j is running
    * RelationLable is the relation name
    * weight is the edge weight
 
-# Content file #
+### Content file #
 * ### nodefile 
 This file contains data for node in 3 columns comma separated, without header.
 
@@ -78,7 +78,7 @@ This file contains data for relation in 4 columns comma separated, without heade
 * --skip-duplicate-node true : We skip the duplicate node
 
 
-### After we run the above script then a graph.db folder is created in the present directory, we can then paste this folder in the /var/lib/neo4j/data/database/
+After we run the above script then a graph.db folder is created in the present directory, we can then paste this folder in the /var/lib/neo4j/data/database/
 
 
 
