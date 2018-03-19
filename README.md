@@ -104,7 +104,6 @@ After we run the above script then a graph.db folder is created in the present d
 
 ### For UI 
 * unzip the shortest-path-1.0-SNAPSHOT.zip 
-* In /shortest-path-1.0-SNAPSHOT/conf/application.conf file,  add , shortest.path.url="http://localhost:7474/db/data/ext/KShortestPaths/graphdb/kShortestPaths"
-* Comment the following line # shortest.path.url="http://127.0.0.1:9000/mockupShortestPath"
-*  To start the UI service  ./shortest-path-1.0-SNAPSHOT/bin/shortest-path
+* To start the UI service cd /bin
+*  And then ./shortest-path
 
