@@ -50,7 +50,7 @@ To check the status whether neo4j is running
 * Here we used noe4j's bulk import utility:
 * In order to create DB for NEO4j we need 4 files(2 header files and 2 content files)
 
-# Header files # 
+### Header files # 
 * ### nheader(:ID, ConceptID, ConceptName) 
  ConceptID and ConceptName are the properties of the node
 
@@ -68,9 +68,9 @@ This file contains data for node in 3 columns comma separated, without header.
 This file contains data for relation in 4 columns comma separated, without header.
 
 
-# Script for creating db #
+#### Script for creating db #
 
-## neo4j-import --into graph.db --nodes:UMLSConcepts "nheader,node" --relationships "rheader,relation"  --skip-duplicate-node true
+#### neo4j-import --into graph.db --nodes:UMLSConcepts "nheader,node" --relationships "rheader,relation"  --skip-duplicate-node true
 
 * --nodes:UMLSConcepts : node label, we are using only one label for entire dataset then we provide this label in script itself, but when there are different label then we provide it in file
 *  "nheader,node" : Name of the node header file and node content file
@@ -83,7 +83,7 @@ This file contains data for relation in 4 columns comma separated, without heade
 
 
 
-## Default location of neo4j graph DB is under folder /var/lib/neo4j/data/databases/.
+### Default location of neo4j graph DB is under folder /var/lib/neo4j/data/databases/.
 
  ### To change the graph db to any other folder:
 
@@ -95,14 +95,14 @@ This file contains data for relation in 4 columns comma separated, without heade
 
 
 
-## Add the graphDB to the data folder of NE4j (folder attached in the repo)
+### Add the graphDB to the data folder of NE4j (folder attached in the repo)
 
 * cp -r graph.db /var/lib/neo4j/data/databases/
 
 
-## Everytime we add a new graph.db file to the neo4j we have to stop the neo4j instance otherwise we corrupt the database
+### Everytime we add a new graph.db file to the neo4j we have to stop the neo4j instance otherwise we corrupt the database
 
-## For UI 
+### For UI 
 * unzip the shortest-path-1.0-SNAPSHOT.zip 
 * In /shortest-path-1.0-SNAPSHOT/conf/application.conf file,  add , shortest.path.url="http://localhost:7474/db/data/ext/KShortestPaths/graphdb/kShortestPaths"
 * Comment the following line # shortest.path.url="http://127.0.0.1:9000/mockupShortestPath"
