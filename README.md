@@ -1,5 +1,6 @@
 # Graph-KB
--------------------------
+----------
+
 Graph-KB is a general graph exploring tool, which has following functionalities:
 1. Finding K-shortest path between two nodes.
 2. Exploring paths around a given node.
@@ -15,8 +16,9 @@ In order to use Graph-Kb you should have:
 The following tutorial supports only **Unix-Systems**
 
 ## I) [ Neo4j-Setup ]:
+----------------------
 
-### Neo4j 3.2 requires the Java 8 runtime. To install java 8 on ubuntu 16.04:
+### 1.1) Neo4j 3.2 requires the Java 8 runtime. To install java 8 on ubuntu 16.04:
 * `echo "deb http://httpredir.debian.org/debian jessie-backports main" | sudo tee -a /etc/apt/sources.list.d/jessie-backports.list`
 * `sudo apt-get update`
 * `sudo add-apt-repository ppa:webupd8team/java`
@@ -24,45 +26,46 @@ The following tutorial supports only **Unix-Systems**
 * `sudo apt-get install oracle-java8-installer`
 
 
-### Add the Neo4j repository: 
+### 1.2) Add the Neo4j repository: 
 * `wget -O - https://debian.neo4j.org/neotechnology.gpg.key | sudo apt-key add -`
 * `echo 'deb http://debian.neo4j.org/repo stable/' | sudo tee -a /etc/apt/sources.list.d/neo4j.list`
 * `sudo apt-get update`
 
-### Installing Neo4j:
+### 1.3) Installing Neo4j:
 * `sudo apt-get install neo4j=3.2.2`
 
-### Check Neo4j installation:
+### 1.4) Check Neo4j installation:
 * `systemctl start neo4j` to start Neo4j.
 * `systemctl status neo4j` to check the status whether Neo4j is running.
 * `systemctl stop neo4j` (After testing whether Neo4j is running, please disconnect the Neo4j service).
 
-### Change the password of NEO4j server(Important)
+### 1.5) Change the password of NEO4j server(Important)
 * After starting the Neo4j service (`systemctl start neo4j`) please open `http://localhost:7474/browser/` on your local browser.
 
 * **Username:** `neo4j` 
   **Password:** `neo4j` 
   this will redirect you to set a new password.
 
-###  Add server plugin (Java package) to the Neo4j:
+### 1.6) Add server plugin (Java package) to the Neo4j:
 * Stop the Neo4j instance before performing following steps (`systemctl stop neo4j`)
 * `cp  com.dfki.LT.OntologyExplorer-1.0-SNAPSHOT.jar /var/lib/neo4j/plugins/`
 
 
 ## II) [ Neo4j-Database ]:
+--------------------------
 
-### Create database for Neo4j (If you don't have graph.DB file)
+### 2.1) Create database for Neo4j (If you don't have graph.DB file)
 * The default Neo4j function was used to create the DB.
 * In order to create DB for Neo4j we need 4 files (*2 header files and 2 content files*)
 
-### Header files
-#### Create ( nheader.txt )
+#### Header files
+##### Create ( nheader.txt )
 Content: `:ID,ConceptID,ConceptName` 
 
 * `:ID`                   ==> Node ID
 * `ConceptID,ConceptName` ==> Properties of the node
 
-#### Create ( rheader.txt ) 
+##### Create ( rheader.txt ) 
 Content: `:START_ID,:END_ID,:TYPE,RelationLabel,weight` 
 
 * `:START_ID,:END_ID` ==> Node ID
@@ -70,15 +73,15 @@ Content: `:START_ID,:END_ID,:TYPE,RelationLabel,weight`
 * `RelationLable`     ==> Relation Name
 * `weight`            ==> Edge weight
 
-### Content file
-#### Create nodefile 
+#### Content file
+##### Create nodefile 
 This file contains data for node in 3 columns comma separated, without header.
 
-#### Create relationfile
+##### Create relationfile
 This file contains data for relation in 4 columns comma separated, without header.
 
 
-### Command to create a Neo4j DB
+### 2.2) Command to create a Neo4j DB
 
 `neo4j-import --into graph.db --nodes:UMLSConcepts "nheader,node" --relationships "rheader,relation"  --skip-duplicate-node true`
 * `--into` Name of the generated database
@@ -92,7 +95,10 @@ This file contains data for relation in 4 columns comma separated, without heade
 
 After running this command a **graph.db** file will be generated in the present directory, you need to move this file into the following folder **/var/lib/neo4j/data/database/**
 
-### (optional) Change the default Neo4j Database **PATH**: 
+## III) [ Additional information ]:
+-----------------------------------
+
+### 3.1) (optional) Change the default Neo4j Database **PATH**: 
 
 Default location of the folder is:  **/var/lib/neo4j/data/databases/**
 
@@ -107,14 +113,14 @@ To change the path of the folder:
 * Change the password for this new DB at localhost:7474 to user: neo4j password: 123 (we can change this as well, but then we have to provide same in web application config file as well)
 
 
-### Command to copy the graph.db file into Neo4j's database folder (file attached with the repository)
+### 3.2) Command to copy the graph.db file into Neo4j's database folder (file attached with the repository)
 
 * `cp -r graph.db /var/lib/neo4j/data/databases/`
 
 
-### (IMPORTANT) Everytime you add a new graph.db file you must stop the Neo4j instance otherwise you will corrupt the database.
+### 3.3) (IMPORTANT) Everytime you add a new graph.db file you must stop the Neo4j instance otherwise you will corrupt the database.
 
-### User-Interface:
+### 3.4) User-Interface:
 * Unzip the **shortest-path-1.0-SNAPSHOT.zip**
 * Open your Terminal
 * Change into the bin directory `cd shortest-path-1.0-SNAPSHOT/bin/`
