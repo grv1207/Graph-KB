@@ -74,7 +74,7 @@ Content: `:START_ID,:END_ID,:TYPE,RelationLabel,weight`
 #### Create nodefile 
 This file contains data for node in 3 columns comma separated, without header.
 
-#### Create Relationfile
+#### Create relationfile
 This file contains data for relation in 4 columns comma separated, without header.
 
 
@@ -82,18 +82,14 @@ This file contains data for relation in 4 columns comma separated, without heade
 
 `neo4j-import --into graph.db --nodes:UMLSConcepts "nheader,node" --relationships "rheader,relation"  --skip-duplicate-node true`
 
-* `--nodes:UMLSConcepts` node label, we are using only one label for entire dataset then we provide this label in script itself, but when there are different label then we provide it in file
-	- `"nheader,node"` Name of the node header file and node content file
+* `--nodes:UMLSConcepts` Node label **Note:** When you have one label only you provide it via this command, but when you have too many labels you must provide them via a file.
+	- `"nheader,node"` Name of the **Node-Header-File** (nheader.txt) and the **Node-Content-File** (nodefile)
 * `--relationships`
-	- `"rheader,relation"` Name of the relation header file and relation content file
+	- `"rheader,relation"` Name of the **Relation-Header-File** (rheader.txt) and the **Relation-Content-File** (relationfile)
 * `--skip-duplicate-node` 
-	- `true` We skip the duplicate node
+	- `true` Skip duplicate nodes
 
-
-After we run the above script then a **graph.db** folder is created in the present directory, we can then paste this folder in the **/var/lib/neo4j/data/database/**
-
-
-
+After running this command a **graph.db** file will be generated in the present directory, you need to paste this file into the following folder **/var/lib/neo4j/data/database/**
 
 ### Default location of neo4j graph DB is under folder /var/lib/neo4j/data/databases/.
 
