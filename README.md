@@ -1,4 +1,5 @@
 # Graph-KB
+-------------------------
 Graph-KB is a general graph exploring tool, which has following functionalities:
 	1. Finding K-shortest path between two nodes.
 	2. Exploring paths around a given node.
@@ -7,31 +8,29 @@ Graph-KB is a general graph exploring tool, which has following functionalities:
 The knowledge-graph that is used to build this tool is the **UMLS dataset** which is freely available at [UMLS website](https://uts.nlm.nih.gov/home.html)
 
 In order to use Graph-Kb you should have:
-	- Neo4j 
-	- JVM
-	- Python 3.x
+* Neo4j 
+* JVM
+* Python 3.x
 
 The following tutorial supports only **Unix-Systems**
 
-##Neo4j-Setup:
+##[Neo4j-Setup]:
 
-### Neo4j 3.2 requires the Java 8 runtime. To install java 8 on ubuntu,
-	- [] `echo "deb http://httpredir.debian.org/debian jessie-backports main" | sudo tee -a /etc/apt/sources.list.d/jessie-backports.list`
-	- [] `sudo apt-get update`
-	- [] `sudo add-apt-repository ppa:webupd8team/java`
-	- [] `sudo apt-get update`
-	- [] `sudo apt-get install oracle-java8-installer`
+### Neo4j 3.2 requires the Java 8 runtime. To install java 8 on ubuntu:
+* `echo "deb http://httpredir.debian.org/debian jessie-backports main" | sudo tee -a /etc/apt/sources.list.d/jessie-backports.list`
+* `sudo apt-get update`
+* `sudo add-apt-repository ppa:webupd8team/java`
+* `sudo apt-get update`
+* `sudo apt-get install oracle-java8-installer`
 
 
-### Add the repository 
+### Add the repository: 
+* `wget -O - https://debian.neo4j.org/neotechnology.gpg.key | sudo apt-key add -`
+* `echo 'deb http://debian.neo4j.org/repo stable/' | sudo tee -a /etc/apt/sources.list.d/neo4j.list`
+* `sudo apt-get update`
 
-	- [] `wget -O - https://debian.neo4j.org/neotechnology.gpg.key | sudo apt-key add -`
-	- [] `echo 'deb http://debian.neo4j.org/repo stable/' | sudo tee -a /etc/apt/sources.list.d/neo4j.list`
-	- [] `sudo apt-get update`
-
-### Installing NEO4j
-
-	- [] `sudo apt-get install neo4j=3.2.2`
+### Installing NEO4j:
+- [] `sudo apt-get install neo4j=3.2.2`
 
 ### To check if NEO4j is installed
 
