@@ -16,7 +16,7 @@ The following tutorial supports only **Unix-Systems**
 
 ## I) [ Neo4j-Setup ]:
 
-### 1) Neo4j 3.2 requires the Java 8 runtime. To install java 8 on ubuntu 16.04:
+### Neo4j 3.2 requires the Java 8 runtime. To install java 8 on ubuntu 16.04:
 * `echo "deb http://httpredir.debian.org/debian jessie-backports main" | sudo tee -a /etc/apt/sources.list.d/jessie-backports.list`
 * `sudo apt-get update`
 * `sudo add-apt-repository ppa:webupd8team/java`
@@ -24,7 +24,7 @@ The following tutorial supports only **Unix-Systems**
 * `sudo apt-get install oracle-java8-installer`
 
 
-### Add the Nrepository: 
+### Add the Neo4j repository: 
 * `wget -O - https://debian.neo4j.org/neotechnology.gpg.key | sudo apt-key add -`
 * `echo 'deb http://debian.neo4j.org/repo stable/' | sudo tee -a /etc/apt/sources.list.d/neo4j.list`
 * `sudo apt-get update`
@@ -32,18 +32,20 @@ The following tutorial supports only **Unix-Systems**
 ### Installing Neo4j:
 * `sudo apt-get install neo4j=3.2.2`
 
-### To check if Neo4j is installed:
+### Check Neo4j installation:
 * `systemctl start neo4j` to start Neo4j.
 * `systemctl status neo4j` to check the status whether Neo4j is running.
-* `systemctl stop neo4j` (After testing whether Neo4j intance is running, please disconnect the Neo4j service).
+* `systemctl stop neo4j` (After testing whether Neo4j is running, please disconnect the Neo4j service).
 
 ### Change the password of NEO4j server(Important)
-* After starting the Neo4j service (`systemctl start neo4j`) please open [http://localhost:7474/browser/]
+* After starting the Neo4j service (`systemctl start neo4j`) please open `http://localhost:7474/browser/` on your local browser.
 
-* **Username:** *neo4j* **Password:** *neo4j*, this will redirect you to set a new password.
+* **Username:** `neo4j` 
+  **Password:** `neo4j` 
+  this will redirect you to set a new password.
 
-###  Add server plugin to the Neo4j:
-* Stop the Neo4j instance before performing below steps (`systemctl stop neo4j`)
+###  Add server plugin (Java package) to the Neo4j:
+* Stop the Neo4j instance before performing following steps (`systemctl stop neo4j`)
 * `cp  com.dfki.LT.OntologyExplorer-1.0-SNAPSHOT.jar /var/lib/neo4j/plugins/`
 
 
