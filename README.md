@@ -58,7 +58,7 @@ The following tutorial supports only **Unix-Systems**
 * The default Neo4j function was used to create the DB.
 * In order to create DB for Neo4j we need 4 files (*2 header files and 2 content files*)
 
-#### Header files
+#### Header files (attached with the repository in Header_files)
 ##### Create ( nheader.txt )
 Content: `:ID,ConceptID,ConceptName` 
 
