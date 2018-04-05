@@ -49,27 +49,32 @@ The following tutorial supports only **Unix-Systems**
 * `cp  com.dfki.LT.OntologyExplorer-1.0-SNAPSHOT.jar /var/lib/neo4j/plugins/`
 
 
-## II) [ Database for Neo4j ]:
+## II) [ Neo4j-Database ]:
 
 ### Create database for Neo4j (If you don't have graph.DB file)
-* Here we used Neo4j's bulk import utility:
-* In order to create DB for Neo4j we need 4 files(2 header files and 2 content files)
+* Here we used Neo4j's bulk import utility.
+* In order to create DB for Neo4j we need 4 files(*2 header files and 2 content files*)
 
 ### Header files
-* ### nheader(:ID, ConceptID, ConceptName) 
- ConceptID and ConceptName are the properties of the node
+#### Create ( nheader.txt )
+Content: `:ID,ConceptID,ConceptName` 
 
-* ### rheader (:START_ID,:END_ID,:TYPE,weight)
-  * :START_ID,:END_ID are the node ID
-   * :Type is the vocabulary
-   * RelationLable is the relation name
-   * weight is the edge weight
+* `:ID`: Node ID
+* `ConceptID,ConceptName`: Properties of the node
+
+#### Create ( rheader.txt ) 
+Content: `:START_ID,:END_ID,:TYPE,RelationLabel,weight` 
+
+* `:START_ID,:END_ID`: Node ID
+* `:Type`: Vocabulary
+* `RelationLable`: Relation Name
+* `weight`: Edge weight
 
 ### Content file
-* ### nodefile 
+#### nodefile 
 This file contains data for node in 3 columns comma separated, without header.
 
-* ### Relationfile
+#### Relationfile
 This file contains data for relation in 4 columns comma separated, without header.
 
 
@@ -105,7 +110,7 @@ To change the graph db to any other folder:
 
 ### Add the graphDB to the data folder of NE4j (folder attached in the repo)
 
-*`cp -r graph.db /var/lib/neo4j/data/databases/`
+* `cp -r graph.db /var/lib/neo4j/data/databases/`
 
 
 ### Everytime we add a new graph.db file to the Neo4j we have to stop the Neo4j instance otherwise we corrupt the database
