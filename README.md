@@ -52,40 +52,42 @@ The following tutorial supports only **Unix-Systems**
 ## II) [ Neo4j-Database ]:
 
 ### Create database for Neo4j (If you don't have graph.DB file)
-* Here we used Neo4j's bulk import utility.
-* In order to create DB for Neo4j we need 4 files(*2 header files and 2 content files*)
+* The default Neo4j function was used to create the DB.
+* In order to create DB for Neo4j we need 4 files (*2 header files and 2 content files*)
 
 ### Header files
 #### Create ( nheader.txt )
 Content: `:ID,ConceptID,ConceptName` 
 
-* `:ID` ==> Node ID
+* `:ID`                   ==> Node ID
 * `ConceptID,ConceptName` ==> Properties of the node
 
 #### Create ( rheader.txt ) 
 Content: `:START_ID,:END_ID,:TYPE,RelationLabel,weight` 
 
 * `:START_ID,:END_ID` ==> Node ID
-* `:Type` ==> Vocabulary
-* `RelationLable` ==> Relation Name
-* `weight` ==> Edge weight
+* `:Type`             ==> Vocabulary
+* `RelationLable`     ==> Relation Name
+* `weight`            ==> Edge weight
 
 ### Content file
-#### nodefile 
+#### Create nodefile 
 This file contains data for node in 3 columns comma separated, without header.
 
-#### Relationfile
+#### Create Relationfile
 This file contains data for relation in 4 columns comma separated, without header.
 
 
-#### Script for creating db
+### Command to create a Neo4j DB
 
-#### neo4j-import --into graph.db --nodes:UMLSConcepts "nheader,node" --relationships "rheader,relation"  --skip-duplicate-node true
+`neo4j-import --into graph.db --nodes:UMLSConcepts "nheader,node" --relationships "rheader,relation"  --skip-duplicate-node true`
 
-* --nodes:UMLSConcepts : node label, we are using only one label for entire dataset then we provide this label in script itself, but when there are different label then we provide it in file
-*  "nheader,node" : Name of the node header file and node content file
-* "rheader,relation" : Name of the relation header file and relation content file
-* --skip-duplicate-node true : We skip the duplicate node
+* `--nodes:UMLSConcepts` node label, we are using only one label for entire dataset then we provide this label in script itself, but when there are different label then we provide it in file
+	- `"nheader,node"` Name of the node header file and node content file
+* `--relationships`
+	- `"rheader,relation"` Name of the relation header file and relation content file
+* `--skip-duplicate-node` 
+	- `true` We skip the duplicate node
 
 
 After we run the above script then a **graph.db** folder is created in the present directory, we can then paste this folder in the **/var/lib/neo4j/data/database/**
