@@ -59,16 +59,16 @@ The following tutorial supports only **Unix-Systems**
 #### Create ( nheader.txt )
 Content: `:ID,ConceptID,ConceptName` 
 
-* `:ID`: Node ID
-* `ConceptID,ConceptName`: Properties of the node
+* `:ID` ==> Node ID
+* `ConceptID,ConceptName` ==> Properties of the node
 
 #### Create ( rheader.txt ) 
 Content: `:START_ID,:END_ID,:TYPE,RelationLabel,weight` 
 
-* `:START_ID,:END_ID`: Node ID
-* `:Type`: Vocabulary
-* `RelationLable`: Relation Name
-* `weight`: Edge weight
+* `:START_ID,:END_ID` ==> Node ID
+* `:Type` ==> Vocabulary
+* `RelationLable` ==> Relation Name
+* `weight` ==> Edge weight
 
 ### Content file
 #### nodefile 
