@@ -44,7 +44,7 @@ The following tutorial supports only **Unix-Systems**
   **Password:** `neo4j` 
   this will redirect you to set a new password.
 
-###  Add server plugin (Java package) to the Neo4j:
+###  Add server plugin (Java package) to Neo4j:
 * Stop the Neo4j instance before performing following steps (`systemctl stop neo4j`)
 * `cp  com.dfki.LT.OntologyExplorer-1.0-SNAPSHOT.jar /var/lib/neo4j/plugins/`
 
