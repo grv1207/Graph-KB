@@ -81,33 +81,36 @@ This file contains data for relation in 4 columns comma separated, without heade
 * --skip-duplicate-node true : We skip the duplicate node
 
 
-After we run the above script then a graph.db folder is created in the present directory, we can then paste this folder in the /var/lib/neo4j/data/database/
+After we run the above script then a **graph.db** folder is created in the present directory, we can then paste this folder in the **/var/lib/neo4j/data/database/**
 
 
 
 
 ### Default location of neo4j graph DB is under folder /var/lib/neo4j/data/databases/.
 
- ### To change the graph db to any other folder:
+To change the graph db to any other folder:
 
-    * open noe4j.conf by: gedit /etc/neo4j/neo4j.conf
-    * replace line dbms.directories.data=/var/lib/neo4j/data with dbms.directories.data=<folder of your choice>
-    * copy the graph.db into <folder of your choice>/databases/
-    * Change the password for this new DB at localhost:7474 to user: neo4j password: 123 (we can change this as well, but then we have to provide same in web application config file as well)
+* Open **neo4j.conf** by: `gedit /etc/neo4j/neo4j.conf`
+
+* Replace line **dbms.directories.data=/var/lib/neo4j/data** with **dbms.directories.data=<folder of your choice>**
+
+* Copy the **graph.db** into **<folder of your choice>/databases/**
+    
+* Change the password for this new DB at localhost:7474 to user: neo4j password: 123 (we can change this as well, but then we have to provide same in web application config file as well)
 
 
 
 
 ### Add the graphDB to the data folder of NE4j (folder attached in the repo)
 
-* cp -r graph.db /var/lib/neo4j/data/databases/
+*`cp -r graph.db /var/lib/neo4j/data/databases/`
 
 
 ### Everytime we add a new graph.db file to the neo4j we have to stop the neo4j instance otherwise we corrupt the database
 
 ### For UI 
-* unzip the shortest-path-1.0-SNAPSHOT.zip 
-* To start the UI service cd /bin
-*  And then ./shortest-path
+* Unzip the **shortest-path-1.0-SNAPSHOT.zip**
+* To start the UI service `cd /bin/`
+* And then `./shortest-path`
 
 
