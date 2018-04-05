@@ -30,31 +30,30 @@ The following tutorial supports only **Unix-Systems**
 * `sudo apt-get update`
 
 ### Installing NEO4j:
-- [] `sudo apt-get install neo4j=3.2.2`
+* `sudo apt-get install neo4j=3.2.2`
 
-### To check if NEO4j is installed
-
-	- [] `systemctl start neo4j` to start neo4j.
-	- [] `systemctl status neo4j` to check the status whether neo4j is running.
-	- [] `systemctl stop neo4j` (After testing whether neo4j intance is running, please disconnect the neo4j service).
+### To check if NEO4j is installed:
+* `systemctl start neo4j` to start neo4j.
+* `systemctl status neo4j` to check the status whether neo4j is running.
+* `systemctl stop neo4j` (After testing whether neo4j intance is running, please disconnect the neo4j service).
 
 ### Change the password of NEO4j server(Important)
-	- [] After starting the neo4j service (`systemctl start neo4j`) please open [http://localhost:7474/browser/]
+* After starting the neo4j service (`systemctl start neo4j`) please open [http://localhost:7474/browser/]
 
-	- [] **Username:** *neo4j* **Password:** *neo4j*, this will redirect you to set a new password.
+* **Username:** *neo4j* **Password:** *neo4j*, this will redirect you to set a new password.
 
-###  Add server plugin to the NEO4j  
-	- [] Stop the neo4j instance before performing below steps (`systemctl stop neo4j`)
-	- [] `cp  com.dfki.LT.OntologyExplorer-1.0-SNAPSHOT.jar /var/lib/neo4j/plugins/`
+###  Add server plugin to the NEO4j:
+* Stop the neo4j instance before performing below steps (`systemctl stop neo4j`)
+* `cp  com.dfki.LT.OntologyExplorer-1.0-SNAPSHOT.jar /var/lib/neo4j/plugins/`
 
 
-## Database for Neo4j:
+## [Database for Neo4j]:
 
 ### Create database for Neo4j (If you don't have graph.DB file)
 * Here we used neo4j's bulk import utility:
 * In order to create DB for NEO4j we need 4 files(2 header files and 2 content files)
 
-### Header files # 
+### Header files
 * ### nheader(:ID, ConceptID, ConceptName) 
  ConceptID and ConceptName are the properties of the node
 
@@ -64,7 +63,7 @@ The following tutorial supports only **Unix-Systems**
    * RelationLable is the relation name
    * weight is the edge weight
 
-### Content file #
+### Content file
 * ### nodefile 
 This file contains data for node in 3 columns comma separated, without header.
 
@@ -72,7 +71,7 @@ This file contains data for node in 3 columns comma separated, without header.
 This file contains data for relation in 4 columns comma separated, without header.
 
 
-#### Script for creating db #
+#### Script for creating db
 
 #### neo4j-import --into graph.db --nodes:UMLSConcepts "nheader,node" --relationships "rheader,relation"  --skip-duplicate-node true
 
