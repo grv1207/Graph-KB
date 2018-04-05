@@ -89,33 +89,34 @@ This file contains data for relation in 4 columns comma separated, without heade
 * `--skip-duplicate-node` 
 	- `true` Skip duplicate nodes
 
-After running this command a **graph.db** file will be generated in the present directory, you need to paste this file into the following folder **/var/lib/neo4j/data/database/**
+After running this command a **graph.db** file will be generated in the present directory, you need to move this file into the following folder **/var/lib/neo4j/data/database/**
 
-### Default location of neo4j graph DB is under folder /var/lib/neo4j/data/databases/.
+### (optional) Change the default Neo4j Database **PATH**: 
 
-To change the graph db to any other folder:
+Default location of the folder is:  **/var/lib/neo4j/data/databases/**
 
-* Open **neo4j.conf** by: `gedit /etc/neo4j/neo4j.conf`
+To change the path of the folder:
 
-* Replace line **dbms.directories.data=/var/lib/neo4j/data** with **dbms.directories.data=<folder of your choice>**
+* Open **neo4j.conf** by typing `gedit /etc/neo4j/neo4j.conf`
 
-* Copy the **graph.db** into **<folder of your choice>/databases/**
+* Replace line **dbms.directories.data=/var/lib/neo4j/data** with **dbms.directories.data=**`<folder of your choice>`
+
+* Copy the **graph.db** into `<folder of your choice>`**/databases/**
     
 * Change the password for this new DB at localhost:7474 to user: neo4j password: 123 (we can change this as well, but then we have to provide same in web application config file as well)
 
 
-
-
-### Add the graphDB to the data folder of NE4j (folder attached in the repo)
+### Command to copy the graph.db file into Neo4j's database folder (file attached with the repository)
 
 * `cp -r graph.db /var/lib/neo4j/data/databases/`
 
 
-### Everytime we add a new graph.db file to the Neo4j we have to stop the Neo4j instance otherwise we corrupt the database
+### (IMPORTANT) Everytime you add a new graph.db file you must stop the Neo4j instance otherwise you will corrupt the database.
 
-### For UI 
+### User-Interface:
 * Unzip the **shortest-path-1.0-SNAPSHOT.zip**
-* To start the UI service `cd /bin/`
-* And then `./shortest-path`
+* Open your Terminal
+* Change into the bin directory `cd shortest-path-1.0-SNAPSHOT/bin/`
+* Run `./shortest-path`
 
 
