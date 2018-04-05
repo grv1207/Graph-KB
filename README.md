@@ -81,7 +81,8 @@ This file contains data for relation in 4 columns comma separated, without heade
 ### Command to create a Neo4j DB
 
 `neo4j-import --into graph.db --nodes:UMLSConcepts "nheader,node" --relationships "rheader,relation"  --skip-duplicate-node true`
-
+* `--into` Name of the generated database
+	- `graph.db` Recommended name
 * `--nodes:UMLSConcepts` Node label **Note:** When you have one label only you provide it via this command, but when you have too many labels you must provide them via a file.
 	- `"nheader,node"` Name of the **Node-Header-File** (nheader.txt) and the **Node-Content-File** (nodefile)
 * `--relationships`
