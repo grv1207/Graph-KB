@@ -1,9 +1,9 @@
 # Graph-KB
 -------------------------
 Graph-KB is a general graph exploring tool, which has following functionalities:
-	1. Finding K-shortest path between two nodes.
-	2. Exploring paths around a given node.
-	3. Infering relations between source and target node of a given path.
+1. Finding K-shortest path between two nodes.
+2. Exploring paths around a given node.
+3. Infering relations between source and target node of a given path.
 
 The knowledge-graph that is used to build this tool is the **UMLS dataset** which is freely available at [UMLS website](https://uts.nlm.nih.gov/home.html)
 
