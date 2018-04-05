@@ -1,53 +1,58 @@
 # Graph-KB
 Graph-KB is a general graph exploring tool, which has following functionalities:
-1. Finding K-shortest path between two nodes.
-2. Exploring paths around a given node.
-3. Infering relations between source and target node of a given path
+	1. Finding K-shortest path between two nodes.
+	2. Exploring paths around a given node.
+	3. Infering relations between source and target node of a given path.
 
-Presently Graph-Kb is support UMLS dataset which is freely available https://uts.nlm.nih.gov/home.html 
+The knowledge-graph that is used to build this tool is the **UMLS dataset** which is freely available at [UMLS website](https://uts.nlm.nih.gov/home.html)
 
-In order to use Graph-Kb you should have Neo4j, JVM and python already installed on your system.
-Below steps are done for linux machine.
+In order to use Graph-Kb you should have:
+	- Neo4j 
+	- JVM
+	- Python 3.x
+
+The following tutorial supports only **Unix-Systems**
+
+##Neo4j-Setup:
 
 ### Neo4j 3.2 requires the Java 8 runtime. To install java 8 on ubuntu,
-
-* echo "deb http://httpredir.debian.org/debian jessie-backports main" | sudo tee -a /etc/apt/sources.list.d/jessie-backports.list
-* sudo apt-get update
-* sudo add-apt-repository ppa:webupd8team/java
-* sudo apt-get update
-* sudo apt-get install oracle-java8-installer
+	- [] `echo "deb http://httpredir.debian.org/debian jessie-backports main" | sudo tee -a /etc/apt/sources.list.d/jessie-backports.list`
+	- [] `sudo apt-get update`
+	- [] `sudo add-apt-repository ppa:webupd8team/java`
+	- [] `sudo apt-get update`
+	- [] `sudo apt-get install oracle-java8-installer`
 
 
 ### Add the repository 
 
-* wget -O - https://debian.neo4j.org/neotechnology.gpg.key | sudo apt-key add -
-* echo 'deb http://debian.neo4j.org/repo stable/' | sudo tee -a /etc/apt/sources.list.d/neo4j.list
-* sudo apt-get update
+	- [] `wget -O - https://debian.neo4j.org/neotechnology.gpg.key | sudo apt-key add -`
+	- [] `echo 'deb http://debian.neo4j.org/repo stable/' | sudo tee -a /etc/apt/sources.list.d/neo4j.list`
+	- [] `sudo apt-get update`
 
 ### Installing NEO4j
 
-* sudo apt-get install neo4j=3.2.2
+	- [] `sudo apt-get install neo4j=3.2.2`
 
 ### To check if NEO4j is installed
 
-* systemctl start neo4j
-To check the status whether neo4j is running
-* systemctl status neo4j
-(After testing whether neo4j intance is running, please disconnect the neo4j service)
-* systemctl stop neo4j
+	- [] `systemctl start neo4j` to start neo4j.
+	- [] `systemctl status neo4j` to check the status whether neo4j is running.
+	- [] `systemctl stop neo4j` (After testing whether neo4j intance is running, please disconnect the neo4j service).
 
 ### Change the password of NEO4j server(Important)
-* After starting the neo4j service (systemctl start neo4j) please open (http://localhost:7474/browser/)
-* Enter the default password 'neo4j' for neo4j 'user', this would redirect you to change password page.
-* enter the new password as .
+	- [] After starting the neo4j service (`systemctl start neo4j`) please open [http://localhost:7474/browser/]
 
+	- [] **Username:** *neo4j* **Password:** *neo4j*, this will redirect you to set a new password.
 
 ###  Add server plugin to the NEO4j  
-* Stop the neo4j instance before performing below steps (systemctl stop neo4j)
-* cp  com.dfki.LT.OntologyExplorer-1.0-SNAPSHOT.jar /var/lib/neo4j/plugins/
+	- [] Stop the neo4j instance before performing below steps (`systemctl stop neo4j`)
+	- [] `cp  com.dfki.LT.OntologyExplorer-1.0-SNAPSHOT.jar /var/lib/neo4j/plugins/`
+
+
+## Database for Neo4j:
 
 ### Create database for Neo4j (If you don't have graph.DB file)
-* Here we used noe4j's bulk import utility:
+* Here we used neo4j's bulk import utility:
 * In order to create DB for NEO4j we need 4 files(2 header files and 2 content files)
 
 ### Header files # 
@@ -106,4 +111,5 @@ After we run the above script then a graph.db folder is created in the present d
 * unzip the shortest-path-1.0-SNAPSHOT.zip 
 * To start the UI service cd /bin
 *  And then ./shortest-path
+
 
