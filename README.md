@@ -5,7 +5,7 @@ Graph-KB is a general graph exploring tool, which has following functionalities:
 2. Exploring paths around a given node.
 3. Infering relations between source and target node of a given path.
 
-The knowledge-graph that is used to build this tool is the **UMLS dataset** which is freely available at [UMLS website](https://uts.nlm.nih.gov/home.html)
+The knowledge-graph that is used to build this tool is the **UMLS (Unified Medical Language System) dataset** which is freely available at [UMLS website](https://uts.nlm.nih.gov/home.html)
 
 In order to use Graph-Kb you should have:
 * Neo4j 
@@ -14,9 +14,9 @@ In order to use Graph-Kb you should have:
 
 The following tutorial supports only **Unix-Systems**
 
-## [Neo4j-Setup]:
+## I) [ Neo4j-Setup ]:
 
-### Neo4j 3.2 requires the Java 8 runtime. To install java 8 on ubuntu:
+### 1) Neo4j 3.2 requires the Java 8 runtime. To install java 8 on ubuntu 16.04:
 * `echo "deb http://httpredir.debian.org/debian jessie-backports main" | sudo tee -a /etc/apt/sources.list.d/jessie-backports.list`
 * `sudo apt-get update`
 * `sudo add-apt-repository ppa:webupd8team/java`
@@ -24,34 +24,34 @@ The following tutorial supports only **Unix-Systems**
 * `sudo apt-get install oracle-java8-installer`
 
 
-### Add the repository: 
+### Add the Nrepository: 
 * `wget -O - https://debian.neo4j.org/neotechnology.gpg.key | sudo apt-key add -`
 * `echo 'deb http://debian.neo4j.org/repo stable/' | sudo tee -a /etc/apt/sources.list.d/neo4j.list`
 * `sudo apt-get update`
 
-### Installing NEO4j:
+### Installing Neo4j:
 * `sudo apt-get install neo4j=3.2.2`
 
-### To check if NEO4j is installed:
-* `systemctl start neo4j` to start neo4j.
-* `systemctl status neo4j` to check the status whether neo4j is running.
-* `systemctl stop neo4j` (After testing whether neo4j intance is running, please disconnect the neo4j service).
+### To check if Neo4j is installed:
+* `systemctl start neo4j` to start Neo4j.
+* `systemctl status neo4j` to check the status whether Neo4j is running.
+* `systemctl stop neo4j` (After testing whether Neo4j intance is running, please disconnect the Neo4j service).
 
 ### Change the password of NEO4j server(Important)
-* After starting the neo4j service (`systemctl start neo4j`) please open [http://localhost:7474/browser/]
+* After starting the Neo4j service (`systemctl start neo4j`) please open [http://localhost:7474/browser/]
 
 * **Username:** *neo4j* **Password:** *neo4j*, this will redirect you to set a new password.
 
-###  Add server plugin to the NEO4j:
-* Stop the neo4j instance before performing below steps (`systemctl stop neo4j`)
+###  Add server plugin to the Neo4j:
+* Stop the Neo4j instance before performing below steps (`systemctl stop neo4j`)
 * `cp  com.dfki.LT.OntologyExplorer-1.0-SNAPSHOT.jar /var/lib/neo4j/plugins/`
 
 
-## [Database for Neo4j]:
+## II) [ Database for Neo4j ]:
 
 ### Create database for Neo4j (If you don't have graph.DB file)
-* Here we used neo4j's bulk import utility:
-* In order to create DB for NEO4j we need 4 files(2 header files and 2 content files)
+* Here we used Neo4j's bulk import utility:
+* In order to create DB for Neo4j we need 4 files(2 header files and 2 content files)
 
 ### Header files
 * ### nheader(:ID, ConceptID, ConceptName) 
@@ -106,7 +106,7 @@ To change the graph db to any other folder:
 *`cp -r graph.db /var/lib/neo4j/data/databases/`
 
 
-### Everytime we add a new graph.db file to the neo4j we have to stop the neo4j instance otherwise we corrupt the database
+### Everytime we add a new graph.db file to the Neo4j we have to stop the Neo4j instance otherwise we corrupt the database
 
 ### For UI 
 * Unzip the **shortest-path-1.0-SNAPSHOT.zip**
