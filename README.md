@@ -14,7 +14,7 @@ In order to use Graph-Kb you should have:
 
 The following tutorial supports only **Unix-Systems**
 
-##[Neo4j-Setup]:
+## [Neo4j-Setup]:
 
 ### Neo4j 3.2 requires the Java 8 runtime. To install java 8 on ubuntu:
 * `echo "deb http://httpredir.debian.org/debian jessie-backports main" | sudo tee -a /etc/apt/sources.list.d/jessie-backports.list`
