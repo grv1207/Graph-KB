@@ -74,16 +74,16 @@ Content: `:START_ID,:END_ID,:TYPE,RelationLabel,weight`
 * `weight`            ==> Edge weight
 
 #### Content file
-##### Create nodefile 
+##### Create nodefile(node.txt) 
 This file contains data for node in 3 columns comma separated, without header.
 
-##### Create relationfile
+##### Create relationfile(relation.txt)
 This file contains data for relation in 4 columns comma separated, without header.
 
 
 ### 2.2) Command to create a Neo4j DB
 
-`neo4j-import --into graph.db --nodes:UMLSConcepts "nheader,node" --relationships "rheader,relation"  --skip-duplicate-node true`
+`neo4j-import --into graph.db --nodes:<Node label> "nheader.txt,node.txt" --relationships "rheader.txt,relation.txt"  --skip-duplicate-node true`
 * `--into` Name of the generated database
 	- `graph.db` Recommended name
 * `--nodes:UMLSConcepts` Node label **Note:** When you have one label only you provide it via this command, but when you have too many labels you must provide them via a file.
@@ -110,15 +110,20 @@ To change the path of the folder:
 
 * Copy the **graph.db** into `<folder of your choice>`**/databases/**
     
-* Change the password for this new DB at localhost:7474 to user: neo4j password: 123 (we can change this as well, but then we have to provide same in web application config file as well)
 
 
-### 3.2) Command to copy the graph.db file into Neo4j's database folder (file attached with the repository)
+### 3.2) Command to copy the graph.db file into Neo4j's database folder 
 
 * `cp -r graph.db /var/lib/neo4j/data/databases/`
 
 
+
 ### 3.3) (IMPORTANT) Everytime you add a new graph.db file you must stop the Neo4j instance otherwise you will corrupt the database.
+
+### 3.4) (IMPORTANT!!!) In order to exploit NEO4j's efficient graph traversal speed, we have to index the database and this can be done via 
+* ` CREATE INDEX ON :<Node label>(<Node property>) ` 
+* ` CREATE INDEX ON :UMLSConcepts(ConceptID) `
+
 
 ### 3.4) User-Interface:
 * Unzip the **shortest-path-1.0-SNAPSHOT.zip**
