@@ -93,7 +93,7 @@ This file contains data for relation in 4 columns comma separated, without heade
 * `--skip-duplicate-node` 
 	- `true` Skip duplicate nodes
 
-After running this command a **graph.db** file will be generated in the present directory, you need to move this file into the following folder **/var/lib/neo4j/data/database/**
+After running this command a **graph.db** folder will be generated in the present directory, you need to move this file into the following folder **/var/lib/neo4j/data/databases/**
 
 ## III) [ Additional information ]:
 -----------------------------------
@@ -126,9 +126,7 @@ To change the path of the folder:
 
 
 ### 3.4) User-Interface:
-* Unzip the **shortest-path-1.0-SNAPSHOT.zip**
-* Open your Terminal
-* Change into the bin directory `cd shortest-path-1.0-SNAPSHOT/bin/`
+* cd to UI/biomedical-dfki-0.1
 * Run `./shortest-path`
 
 
