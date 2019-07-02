@@ -62,7 +62,7 @@ The following tutorial supports only **Unix-Systems**
 ##### Create ( nheader.txt )
 Content: `:ID,ConceptID,ConceptName` 
 
-* `:ID`                   ==> Node ID
+* `:ID`                   ==> Node IDbiomedical-dfki
 * `ConceptID,ConceptName` ==> Properties of the node
 
 ##### Create ( rheader.txt ) 
@@ -128,5 +128,6 @@ To change the path of the folder:
 ### 3.4) User-Interface:
 * cd to UI/biomedical-dfki-0.1/bin
 * Run `./biomedical-dfki`
+* Open the browser and type http://localhost:9000/graph-kd
 
 
