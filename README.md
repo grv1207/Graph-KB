@@ -126,7 +126,7 @@ To change the path of the folder:
 
 
 ### 3.4) User-Interface:
-* cd to UI/biomedical-dfki-0.1
-* Run `./shortest-path`
+* cd to UI/biomedical-dfki-0.1/bin
+* Run `./biomedical-dfki`
 
 
