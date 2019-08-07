@@ -6,7 +6,7 @@ Graph-KD is a general graph exploring tool, which has following functionalities:
 2. Exploring paths around a given node.
 3. Infering relations between source and target node of a given path.
 
-Graph-KD Exploring Relational Information for Knowledge Discovery.  
+## Graph-KD Exploring Relational Information for Knowledge Discovery.  
 **Roland Roller, Gaurav Vashisth, Philippe Thomas, He Wang, Michael Mikhailov and Mark Stevenson**
 [To appear] Proceedings of the International Semantic Web Conference 2019.
 
