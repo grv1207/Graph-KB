@@ -1,7 +1,6 @@
 # Graph-KD Exploring Relational Information for Knowledge Discovery.  
 **Roland Roller, Gaurav Vashisth, Philippe Thomas, He Wang, Michael Mikhailov and Mark Stevenson**
 [To appear] Proceedings of the International Semantic Web Conference 2019.
-----------
 
 Graph-KD is a general graph exploring tool, which has following functionalities:
 1. Finding K-shortest path between two nodes.
